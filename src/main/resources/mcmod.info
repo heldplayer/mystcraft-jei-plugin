@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "mystcraft-jei-plugin",
+    "name": "Mystcraft JEI Plugin",
+    "description": "Adds JEI integration for Mystcraft",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "authorList": [
+      "heldplayer"
+    ],
+    "url": "https://minecraft.curseforge.com/projects/jei-mystcraft-plugin"
+  }
+]

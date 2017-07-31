@@ -1,0 +1,17 @@
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.log
+*.lck
+*.bin
+*.iml
+*.ipr
+*.iws
+
+/.gradle/
+/.idea/
+/build/
+/classes/
+/run/
+/libs/

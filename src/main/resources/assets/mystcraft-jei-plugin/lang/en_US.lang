@@ -1,0 +1,79 @@
+mystcraft-jei.writing_desk.page=Right click a page on the tab list on the right to craft
+mystcraft-jei.writing_desk.page.name=Pages can't be renamed in the writing desk
+mystcraft-jei.writing_desk.notebook=Right click a page on the tab list on the right to add it to the notebook
+mystcraft-jei.writing_desk.notebook.name=Rename the notebook using the textfield
+
+
+mystcraft-jei.ink_mixer.drop=Drop items in the ink well to add effects
+
+mystcraft-jei.description.decay.1=Decay is an instability in a Mystcraft Age that spreads. It causes destruction of the world and is usually hazardous to anything in the Age.
+mystcraft-jei.description.decay.2=If you discover a certain kind of decay once in an Age, you can be sure you will find it again.
+mystcraft-jei.description.decay.black.1=Black Decay eats the world, replacing blocks next to and below it.
+mystcraft-jei.description.decay.black.2=Any blocks touching the decay on the top will slowly be consumed, causing the blocks above them to cascade down.
+mystcraft-jei.description.decay.black.3=Black Decay will make itself visible by creating dips in the terrain, as if a crater is forming.
+mystcraft-jei.description.decay.black.4=Eventually, a hole down to the void will be created.
+mystcraft-jei.description.decay.red.1=Red Decay spreads throughout the world, converting any blocks in its path and even spreading into the air.
+mystcraft-jei.description.decay.red.2=Red Decay spreads more slowly through blocks that are resistant to explosions.
+mystcraft-jei.description.decay.blue.1=Blue Decay spreads throughout the world, converting any blocks in its path and even spreading into the air.
+mystcraft-jei.description.decay.blue.2=Blue Decay spreads more slowly through blocks that are harder to break.
+mystcraft-jei.description.decay.purple.1=Purple Decay spreads throughout the world, converting any blocks in its path and even spreading into the air.
+mystcraft-jei.description.decay.purple.2=Purple Decay spreads more quickly through liquids
+mystcraft-jei.description.decay.white.1=White Decay spreads throughout the world, converting any blocks in its path and even spreading into the air.
+mystcraft-jei.description.decay.white.2=White Decay spreads very quickly, being only mildly hindered by air gaps.
+mystcraft-jei.description.decay.white.3=Additionaly, it damages anything that touches it.
+mystcraft-jei.description.decay.white.4=White Decay is the most dangerous kind of decay.
+
+mystcraft-jei.description.lectern.1=A Lectern lets you safely store a Descriptive Book or Linking Book to protect it from the elements.
+mystcraft-jei.description.lectern.2=A book can be placed on a Lectern by using it on the Lectern. Taking it back out can be done by shift-using it with an empty hand.
+
+mystcraft-jei.description.bookstand.1=A Bookstand lets you safely store a Descriptive Book or Linking Book to protect it from the elements.
+mystcraft-jei.description.bookstand.2=A book can be placed on a Bookstand by using it on the Bookstand. Taking it back out can be done by shift-using it with an empty hand.
+
+mystcraft-jei.description.crystal.1=Crystals are blocks that, when combined with a Book Receptacle, can form a portal to a different place or dimension.
+mystcraft-jei.description.crystal.2=Crystals can be found in some Ages, either occouring randomly or because of writing in the Age's Descriptive Book.
+
+mystcraft-jei.description.crystal_receptacle.1=A Book Receptacle is a block that, when combined with Crystals, can form a portal to a different place or dimension.
+mystcraft-jei.description.crystal_receptacle.2=A Descriptive Book or Linking Book can be placed in the receptacle to form a portal to the location the book links to.
+mystcraft-jei.description.crystal_receptacle.3=Taking out the book will break the link and closes the portal.
+
+mystcraft-jei.description.ink_mixer.1=The Inker Mixer is used to create Link Panels. To create Link Panels, you need Ink Vials and Paper.
+mystcraft-jei.description.ink_mixer.2=You can add effects to the Link Panel by putting items in the ink well.
+
+mystcraft-jei.description.writing_desk.1=The Writing Desk is used to create Symbol Pages. It is a useful block for planning out your Ages and for duplicating Symbol Pages.
+mystcraft-jei.description.writing_desk.2=To create a new Symbol Page, you need to have an existing page or a Collation Folder or Symbol Portfolio that contains the Symbol.
+mystcraft-jei.description.writing_desk.3=A Writing Desk can also be used to rename Descriptive Books and Linking Books.
+
+mystcraft-jei.description.book_binder.1=The Book Binder is used to create new Descriptive Books, letting you create a new Age.
+mystcraft-jei.description.book_binder.2=While creating the Age, you can drop individual pages or a Collation Folder into the interface.
+mystcraft-jei.description.book_binder.3=You must have exactly one Link Panel, and it must be the very first page. You also need leather and a name for the Age you are creating.
+mystcraft-jei.description.book_binder.4=Adding Symbol Pages is optional, if you just want a random age, you can even go for only a Link Panel page.
+
+mystcraft-jei.description.link_modifer.1=The Link Modifier is a Debug block. It cannot be obtained legitimately.
+mystcraft-jei.description.link_modifer.2=It can be used to change the linking properties of Linking Books and Description Books, as well as their names.
+mystcraft-jei.description.link_modifer.3=If you want to change the name of a book, use a Writing Desk. If you want different Link Properties, create a new Linking Panel with the properties you want.
+
+mystcraft-jei.description.ink_vial.1=An Ink Vial is a Glass Bottle filled with Ink, the primary resource used to write Symbols and to create Link Panels.
+mystcraft-jei.description.ink_vial.2=Ink Vials can be put into a Writing Desk or an Ink Mixer to begin writing Ages or creating Linking Books.
+
+mystcraft-jei.description.unlinked_linkbook.1=An Unlinked Link Book can be used to create a Linking Book, which will create a link to the location you are standing at.
+mystcraft-jei.description.unlinked_linkbook.2=Linking can be done by using the Linking Book.
+
+mystcraft-jei.description.linked_linkbook.1=A Linking Book is a book that you can use to travel to a location. The location you travel to is where the book was made.
+mystcraft-jei.description.linked_linkbook.2=Only Linking Books with the Intra-linking property can link to the same dimension.
+
+mystcraft-jei.description.sealed_notebook.1=Sealed Notebooks are collections of Symbol Pages that can be found in Mystcraft villager's homes and abandoned libraries in Ages.
+mystcraft-jei.description.sealed_notebook.2=Using a Sealed Notebook will open it, and give you a Collation Folder with a bunch of randomly selected Symbols.
+
+mystcraft-jei.description.folder.1=Collation Folders let you store Pages in an ordered manner.
+mystcraft-jei.description.folder.2=Dropping a Collation Folder in a Book Binder like a Page will put all the Pages in the Book Binder in the order they are stored.
+
+mystcraft-jei.description.portfolio.1=Symbol Portfolios let you store Pages in a sorted manner.
+mystcraft-jei.description.portfolio.2=Pages stored in a Symbol Portfolio will always be sorted alphabetically.
+
+mystcraft-jei.category.book_binder=Book Binder
+mystcraft-jei.category.ink_mixer=Ink Mixer
+mystcraft-jei.category.writing_desk=Writing Desk
+
+
+
+linkeffect.following.name=Following
