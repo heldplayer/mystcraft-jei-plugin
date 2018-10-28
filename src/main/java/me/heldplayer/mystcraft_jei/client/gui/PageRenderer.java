@@ -5,8 +5,9 @@ import me.heldplayer.mystcraft_jei.integration.mystcraft.MystRender;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
@@ -18,7 +19,7 @@ public class PageRenderer {
     }
 
     @SideOnly(Side.CLIENT)
-    public static void renderPage(@Nonnull Minecraft minecraft, @Nonnull String symbol, float posX, float posY, float zLevel, float width, float height) {
+    public static void renderPage(@Nonnull Minecraft minecraft, @Nonnull ResourceLocation symbol, float posX, float posY, float zLevel, float width, float height) {
         minecraft.getTextureManager().bindTexture(Assets.BOOK_PAGE_LEFT);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         drawTexturedModalRect(posX, posY, width, height, zLevel, 0.609375F, 0.0F, 0.7265625F, 0.15625F);
@@ -51,7 +52,7 @@ public class PageRenderer {
         GlStateManager.shadeModel(GL11.GL_SMOOTH);
         GL11.glShadeModel(GL11.GL_SMOOTH);
         Tessellator tessellator = Tessellator.getInstance();
-        VertexBuffer vertexbuffer = tessellator.getBuffer();
+        BufferBuilder vertexbuffer = tessellator.getBuffer();
         vertexbuffer.begin(7, DefaultVertexFormats.POSITION_COLOR);
         vertexbuffer.pos(right, top, zLevel).color(startRed, startGreen, startBlue, startAlpha).endVertex();
         vertexbuffer.pos(left, top, zLevel).color(startRed, startGreen, startBlue, startAlpha).endVertex();
@@ -67,7 +68,7 @@ public class PageRenderer {
     @SideOnly(Side.CLIENT)
     private static void drawTexturedModalRect(float posX, float posY, float width, float height, float zLevel, float uStart, float vStart, float uEnd, float vEnd) {
         Tessellator tessellator = Tessellator.getInstance();
-        VertexBuffer vertexbuffer = tessellator.getBuffer();
+        BufferBuilder vertexbuffer = tessellator.getBuffer();
         vertexbuffer.begin(7, DefaultVertexFormats.POSITION_TEX);
         vertexbuffer.pos(posX, posY + height, zLevel).tex(uStart, vEnd).endVertex();
         vertexbuffer.pos(posX + width, posY + height, zLevel).tex(uEnd, vEnd).endVertex();

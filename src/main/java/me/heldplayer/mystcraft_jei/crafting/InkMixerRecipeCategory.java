@@ -9,14 +9,15 @@ import mezz.jei.api.gui.IGuiFluidStackGroup;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
-import mezz.jei.api.recipe.BlankRecipeCategory;
+import mezz.jei.api.ingredients.VanillaTypes;
+import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 
 import javax.annotation.Nonnull;
 
-public class InkMixerRecipeCategory extends BlankRecipeCategory<IRecipeWrapper> {
+public class InkMixerRecipeCategory implements IRecipeCategory<IRecipeWrapper> {
     public static final int SLOT_TANK_INPUT = 0;
     public static final int SLOT_TANK_OUTPUT = 1;
     public static final int SLOT_PAPER = 2;
@@ -36,7 +37,7 @@ public class InkMixerRecipeCategory extends BlankRecipeCategory<IRecipeWrapper> 
         ResourceLocation location = new ResourceLocation("mystcraft", "gui/inkmixer.png");
         this.background = guiHelper.createDrawable(location, 5, 11, width, height);
         this.tankOverlay = guiHelper.createDrawable(location, 54, 16, 67, 66);
-        this.iconDrop = guiHelper.createDrawable(Assets.ICONS_EXTRA, 0, 0, 18, 10, Assets.ICONS_EXTRA_WIDTH, Assets.ICONS_EXTRA_HEIGHT);
+        this.iconDrop = guiHelper.drawableBuilder(Assets.ICONS_EXTRA, 0, 0, 18, 10).setTextureSize(Assets.ICONS_EXTRA_WIDTH, Assets.ICONS_EXTRA_HEIGHT).build();
         this.title = Util.translate("mystcraft-jei.category.ink_mixer");
     }
 
@@ -83,10 +84,10 @@ public class InkMixerRecipeCategory extends BlankRecipeCategory<IRecipeWrapper> 
             recipe.setDropIcon(this.iconDrop);
         }
 
-        if (ingredients.getInputs(FluidStack.class).size() > 0) {
+        if (ingredients.getInputs(VanillaTypes.FLUID).size() > 0) {
             guiFluidStacks.init(TANK_INK, true, 49, 5, 67, 66, 1000, false, tankOverlay);
         }
-        if (ingredients.getOutputs(FluidStack.class).size() > 0) {
+        if (ingredients.getOutputs(VanillaTypes.FLUID).size() > 0) {
             guiFluidStacks.init(TANK_INK, false, 49, 5, 67, 66, 1000, false, tankOverlay);
         }
 

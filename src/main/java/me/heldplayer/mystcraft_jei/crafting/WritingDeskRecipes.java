@@ -9,13 +9,17 @@ import me.heldplayer.mystcraft_jei.util.Integration;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.gui.IGuiIngredient;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.BlankRecipeWrapper;
+import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
@@ -33,7 +37,7 @@ public class WritingDeskRecipes {
         int inkcost = Integration.getInkcost();
 
         return Stream.concat(
-                modRegistry.getIngredientRegistry().getIngredients(ItemStack.class).stream()
+                modRegistry.getIngredientRegistry().getAllIngredients(VanillaTypes.ITEM).stream()
                         .map((stack) -> Pair.of(stack, FluidUtil.getFluidContained(stack)))
                         .filter((stacks) -> stacks.getRight() != null)
                         .filter((stacks) -> stacks.getRight().amount <= 1000)
@@ -48,7 +52,7 @@ public class WritingDeskRecipes {
         ).collect(Collectors.toList());
     }
 
-    public abstract static class AwareRecipeWrapper extends BlankRecipeWrapper {
+    public abstract static class AwareRecipeWrapper implements IRecipeWrapper {
         protected IGuiIngredient<ItemStack> inputSlot;
         protected IDrawableTextfield textField;
 
@@ -91,9 +95,9 @@ public class WritingDeskRecipes {
             List<List<FluidStack>> outputFluids = new ArrayList<>();
             outputFluids.add(Collections.singletonList(this.fluid));
 
-            ingredients.setInputLists(ItemStack.class, inputStacks);
-            ingredients.setOutputLists(FluidStack.class, outputFluids);
-            ingredients.setOutputLists(ItemStack.class, outputStacks);
+            ingredients.setInputLists(VanillaTypes.ITEM, inputStacks);
+            ingredients.setOutputLists(VanillaTypes.FLUID, outputFluids);
+            ingredients.setOutputLists(VanillaTypes.ITEM, outputStacks);
         }
 
         @Override
@@ -122,9 +126,9 @@ public class WritingDeskRecipes {
             List<List<FluidStack>> inputFluids = new ArrayList<>();
             inputFluids.add(this.validFluids);
 
-            ingredients.setInputLists(ItemStack.class, inputStacks);
-            ingredients.setInputLists(FluidStack.class, inputFluids);
-            ingredients.setOutputLists(ItemStack.class, outputStacks);
+            ingredients.setInputLists(VanillaTypes.ITEM, inputStacks);
+            ingredients.setInputLists(VanillaTypes.FLUID, inputFluids);
+            ingredients.setOutputLists(VanillaTypes.ITEM, outputStacks);
         }
 
         @Override
@@ -133,7 +137,7 @@ public class WritingDeskRecipes {
 
             ItemStack ingredient = this.inputSlot.getDisplayedIngredient();
             if (ingredient != null) {
-                String symbol = MystPage.getPageSymbol(ingredient);
+                ResourceLocation symbol = MystPage.getPageSymbol(ingredient);
                 if (symbol != null) {
                     IAgeSymbol ageSymbol = MystSymbol.getSymbol(symbol);
                     if (ageSymbol != null) {
@@ -153,7 +157,7 @@ public class WritingDeskRecipes {
             if (mouseX >= 26 && mouseX < 63 && mouseY >= 0 && mouseY < 50) {
                 ItemStack ingredient = this.inputSlot.getDisplayedIngredient();
                 if (ingredient != null) {
-                    String symbol = MystPage.getPageSymbol(ingredient);
+                    ResourceLocation symbol = MystPage.getPageSymbol(ingredient);
                     if (symbol != null) {
                         IAgeSymbol ageSymbol = MystSymbol.getSymbol(symbol);
                         if (ageSymbol != null) {

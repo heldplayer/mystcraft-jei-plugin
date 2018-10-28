@@ -8,12 +8,12 @@ import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
-import mezz.jei.api.recipe.BlankRecipeCategory;
+import mezz.jei.api.recipe.IRecipeCategory;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
 
-public class BookBinderRecipeCategory extends BlankRecipeCategory<BookBinderRecipes.AwareRecipeWrapper> {
+public class BookBinderRecipeCategory implements IRecipeCategory<BookBinderRecipes.AwareRecipeWrapper> {
     public static final int SLOT_LEATHER = 0;
     public static final int SLOT_RESULT = 1;
 

@@ -8,6 +8,7 @@ import me.heldplayer.mystcraft_jei.Util;
 import me.heldplayer.mystcraft_jei.integration.mystcraft.MystItemFactory;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.BlankRecipeWrapper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
@@ -120,9 +121,9 @@ public class InkMixerRecipeWrapper extends BlankRecipeWrapper {
         List<List<FluidStack>> inputFluids = new ArrayList<>();
         inputFluids.add(Collections.singletonList(FluidRegistry.getFluidStack(MystObjects.Fluids.black_ink, 1000)));
 
-        ingredients.setInputLists(ItemStack.class, inputStacks);
-        ingredients.setInputLists(FluidStack.class, inputFluids);
-        ingredients.setOutputLists(ItemStack.class, outputStacks);
+        ingredients.setInputLists(VanillaTypes.ITEM, inputStacks);
+        ingredients.setInputLists(VanillaTypes.FLUID, inputFluids);
+        ingredients.setOutputLists(VanillaTypes.ITEM, outputStacks);
     }
 
     @Override

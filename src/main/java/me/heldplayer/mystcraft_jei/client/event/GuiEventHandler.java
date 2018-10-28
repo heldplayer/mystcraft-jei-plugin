@@ -65,7 +65,7 @@ public class GuiEventHandler {
             try {
                 List<GuiLabel> labelList = (List<GuiLabel>) LABEL_LIST.get(screen);
                 labelList.removeIf(label -> label instanceof DrawableRecipesButton);
-                labelList.add(new DrawableRecipesButton(screen.mc.fontRendererObj, MystcraftJEI.proxy.getRecipeIcon(), -99, screen.getGuiLeft() + posX, screen.getGuiTop() + posY));
+                labelList.add(new DrawableRecipesButton(screen.mc.fontRenderer, MystcraftJEI.proxy.getRecipeIcon(), -99, screen.getGuiLeft() + posX, screen.getGuiTop() + posY));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }

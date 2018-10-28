@@ -6,7 +6,9 @@ import me.heldplayer.mystcraft_jei.client.gui.IDrawableTextfield;
 import me.heldplayer.mystcraft_jei.util.Integration;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.BlankRecipeWrapper;
+import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -27,7 +29,7 @@ public class BookBinderRecipes {
         return Collections.singletonList(new AgeWrite());
     }
 
-    public abstract static class AwareRecipeWrapper extends BlankRecipeWrapper {
+    public abstract static class AwareRecipeWrapper implements IRecipeWrapper {
         protected IDrawableTextfield textField;
 
         public void setTextField(IDrawableTextfield textField) {
@@ -55,8 +57,8 @@ public class BookBinderRecipes {
             Item descriptiveBook = Integration.getMystItem(MystObjects.Items.descriptive_book);
             outputStacks.add(descriptiveBook == null ? Collections.emptyList() : Collections.singletonList(new ItemStack(descriptiveBook)));
 
-            ingredients.setInputLists(ItemStack.class, inputStacks);
-            ingredients.setOutputLists(ItemStack.class, outputStacks);
+            ingredients.setInputLists(VanillaTypes.ITEM, inputStacks);
+            ingredients.setOutputLists(VanillaTypes.ITEM, outputStacks);
         }
 
         @Override

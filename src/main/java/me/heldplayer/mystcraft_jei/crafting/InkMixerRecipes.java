@@ -3,6 +3,7 @@ package me.heldplayer.mystcraft_jei.crafting;
 import me.heldplayer.mystcraft_jei.util.Integration;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.BlankRecipeWrapper;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.item.Item;
@@ -25,7 +26,7 @@ public class InkMixerRecipes {
         Set<String> validInks = Integration.getValidInks();
 
         return Stream.concat(
-                modRegistry.getIngredientRegistry().getIngredients(ItemStack.class).stream()
+                modRegistry.getIngredientRegistry().getAllIngredients(VanillaTypes.ITEM).stream()
                         .map((stack) -> Pair.of(stack, FluidUtil.getFluidContained(stack)))
                         .filter((stacks) -> stacks.getRight() != null)
                         .filter((stacks) -> stacks.getRight().amount == 1000)
@@ -48,7 +49,7 @@ public class InkMixerRecipes {
         ).collect(Collectors.toList());
     }
 
-    private static class InkFill extends BlankRecipeWrapper {
+    private static class InkFill implements IRecipeWrapper {
 
         private final ItemStack inputItem;
         private final ItemStack outputItem;
@@ -72,9 +73,9 @@ public class InkMixerRecipes {
             List<List<FluidStack>> outputFluids = new ArrayList<>();
             outputFluids.add(Collections.singletonList(this.fluid));
 
-            ingredients.setInputLists(ItemStack.class, inputStacks);
-            ingredients.setOutputLists(FluidStack.class, outputFluids);
-            ingredients.setOutputLists(ItemStack.class, outputStacks);
+            ingredients.setInputLists(VanillaTypes.ITEM, inputStacks);
+            ingredients.setOutputLists(VanillaTypes.FLUID, outputFluids);
+            ingredients.setOutputLists(VanillaTypes.ITEM, outputStacks);
         }
     }
 }

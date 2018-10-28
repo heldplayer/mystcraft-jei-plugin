@@ -28,7 +28,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     @Nonnull
     public IDrawableTextfield createTextField(int width, int height) {
-        return new DrawableTextField(FMLClientHandler.instance().getClient().fontRendererObj, width, height);
+        return new DrawableTextField(FMLClientHandler.instance().getClient().fontRenderer, width, height);
     }
 
     @Override

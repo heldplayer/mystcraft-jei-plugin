@@ -46,8 +46,8 @@ public class DrawableTextField extends Gui implements IDrawableTextfield {
 
     @Override
     public void draw(@Nonnull Minecraft minecraft, int xOffset, int yOffset) {
-        this.textField.xPosition = xOffset;
-        this.textField.yPosition = yOffset;
+        this.textField.x = xOffset;
+        this.textField.y = yOffset;
         this.textField.drawTextBox();
     }
 }

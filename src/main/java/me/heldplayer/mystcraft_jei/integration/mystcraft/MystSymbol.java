@@ -2,6 +2,7 @@ package me.heldplayer.mystcraft_jei.integration.mystcraft;
 
 import com.xcompwiz.mystcraft.api.hook.SymbolAPI;
 import com.xcompwiz.mystcraft.api.symbol.IAgeSymbol;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -24,7 +25,7 @@ public class MystSymbol {
     }
 
     @Nullable
-    public static IAgeSymbol getSymbol(@Nonnull String s) {
+    public static IAgeSymbol getSymbol(@Nonnull ResourceLocation s) {
         return api.getSymbol(s);
     }
 }

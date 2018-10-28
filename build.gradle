@@ -4,7 +4,7 @@ buildscript {
         maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -40,7 +40,7 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20161220"
+    mappings = "snapshot_20171003"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
     if (project.hasProperty("signature"))
@@ -50,7 +50,7 @@ minecraft {
 dependencies {
     deobfProvided "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
     runtime "mezz.jei:jei_${minecraft_version}:${jei_version}"
-
+    compile files('libs/mystcraft.jar')
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
@@ -96,19 +96,19 @@ processResources {
 }
 
 // https://gist.github.com/matthewprenger/9b2da059b89433a01c1c
-task signJar(type: SignJar, dependsOn: reobfJar) {
-    onlyIf { project.hasProperty('keyStore') }
+//task signJar(type: SignJar, dependsOn: reobfJar) {
+//    onlyIf { project.hasProperty('keyStore') }
 
-    if (!project.hasProperty('keyStore')) { // This shouldn't be possible, but onlyIf isn't working properly :/
-        throw new StopExecutionException()
-    }
+    //if (!project.hasProperty('keyStore')) { // This shouldn't be possible, but onlyIf isn't working properly :/
+        //throw new StopExecutionException()
+    //}
 
-    keyStore = project.keyStore // This needs to be a path to the keystore file
-    alias = project.keyStoreAlias
-    storePass = project.keyStorePass
-    keyPass = project.keyStoreKeyPass
-    inputFile = jar.archivePath
-    outputFile = jar.archivePath
-}
+    //keyStore = project.keyStore // This needs to be a path to the keystore file
+   // alias = project.keyStoreAlias
+   // storePass = project.keyStorePass
+   // keyPass = project.keyStoreKeyPass
+   // inputFile = jar.archivePath
+   // outputFile = jar.archivePath
+//}
 
-build.dependsOn signJar
+//build.dependsOn signJar

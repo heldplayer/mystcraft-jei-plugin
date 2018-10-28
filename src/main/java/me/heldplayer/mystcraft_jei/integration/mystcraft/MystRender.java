@@ -2,6 +2,7 @@ package me.heldplayer.mystcraft_jei.integration.mystcraft;
 
 import com.xcompwiz.mystcraft.api.hook.RenderAPI;
 import com.xcompwiz.mystcraft.api.util.Color;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -19,7 +20,7 @@ public class MystRender {
     }
 
     @SideOnly(Side.CLIENT)
-    public static void drawSymbol(float posX, float posY, float zLevel, float radius, @Nonnull String identifier) {
+    public static void drawSymbol(float posX, float posY, float zLevel, float radius, @Nonnull ResourceLocation identifier) {
         api.drawSymbol(posX, posY, zLevel, radius, identifier);
     }
 

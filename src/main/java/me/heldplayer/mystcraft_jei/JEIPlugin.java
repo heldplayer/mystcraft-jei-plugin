@@ -24,7 +24,7 @@ import java.util.List;
 
 @mezz.jei.api.JEIPlugin
 public class JEIPlugin extends BlankModPlugin {
-    private IIngredientRegistry ingredientRegistry;
+    public IIngredientRegistry ingredientRegistry;
 
     @Override
     public void registerItemSubtypes(@Nonnull ISubtypeRegistry registry) {
