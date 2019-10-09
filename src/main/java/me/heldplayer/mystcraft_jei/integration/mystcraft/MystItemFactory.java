@@ -2,6 +2,7 @@ package me.heldplayer.mystcraft_jei.integration.mystcraft;
 
 import com.xcompwiz.mystcraft.api.hook.ItemFactory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
 
@@ -17,7 +18,7 @@ public class MystItemFactory {
     }
 
     @Nonnull
-    public static ItemStack buildSymbolPage(@Nonnull String s) {
+    public static ItemStack buildSymbolPage(@Nonnull ResourceLocation s) {
         return api.buildSymbolPage(s);
     }
 

@@ -181,7 +181,7 @@ public final class Integration {
         return MystSymbol.getAllRegisteredSymbols()
                 .stream()
                 .sorted(Comparator.comparing(IAgeSymbol::getLocalizedName))
-                .map(IAgeSymbol::identifier)
+                .map(IAgeSymbol::getRegistryName)
                 .map(MystItemFactory::buildSymbolPage)
                 .collect(Collectors.toList());
     }

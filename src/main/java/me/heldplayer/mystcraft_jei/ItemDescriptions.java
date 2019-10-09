@@ -3,6 +3,7 @@ package me.heldplayer.mystcraft_jei;
 import com.xcompwiz.mystcraft.api.MystObjects;
 import me.heldplayer.mystcraft_jei.util.Integration;
 import mezz.jei.api.IModRegistry;
+import mezz.jei.api.ingredients.VanillaTypes;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import org.apache.commons.lang3.tuple.Pair;
@@ -125,7 +126,7 @@ public class ItemDescriptions {
                     .map((stack) -> Pair.of(Integration.getMystItem(stack.getLeft()), stack.getRight()))
                     .filter((stack) -> stack.getLeft() != null && stack.getLeft() != Items.AIR)
                     .map((stack) -> new ItemStack(stack.getLeft(), 1, stack.getRight()))
-                    .collect(Collectors.toList()), ItemStack.class, descriptions);
+                    .collect(Collectors.toList()), VanillaTypes.ITEM, descriptions);
 
             // Link panels
             // Symbol pages

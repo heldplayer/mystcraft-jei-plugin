@@ -5,6 +5,7 @@ import com.xcompwiz.mystcraft.api.MystObjects;
 import me.heldplayer.mystcraft_jei.integration.mystcraft.MystItemFactory;
 import me.heldplayer.mystcraft_jei.util.Integration;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.BlankRecipeWrapper;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -26,7 +27,7 @@ public class LinkingBookRecipeWrapper extends BlankRecipeWrapper {
         NBTTagCompound tag = pageStack.getTagCompound();
         resultStack.setTagCompound(tag == null ? null : tag.copy());
 
-        ingredients.setInputs(ItemStack.class, Lists.newArrayList(new ItemStack(Items.LEATHER), pageStack));
-        ingredients.setOutput(ItemStack.class, resultStack);
+        ingredients.setInputs(VanillaTypes.ITEM, Lists.newArrayList(new ItemStack(Items.LEATHER), pageStack));
+        ingredients.setOutput(VanillaTypes.ITEM, resultStack);
     }
 }

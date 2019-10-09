@@ -9,6 +9,7 @@ import mezz.jei.api.gui.IGuiFluidStackGroup;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.BlankRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
@@ -75,10 +76,10 @@ public class WritingDeskRecipeCategory extends BlankRecipeCategory<WritingDeskRe
         guiItemStacks.init(SLOT_TANK_OUTPUT, false, 144, 52);
         guiItemStacks.set(ingredients);
 
-        if (ingredients.getInputs(FluidStack.class).size() > 0) {
+        if (ingredients.getInputs(VanillaTypes.FLUID).size() > 0) {
             guiFluidStacks.init(TANK_INK, true, 126, 1, 14, 68, 1000, false, null);
         }
-        if (ingredients.getOutputs(FluidStack.class).size() > 0) {
+        if (ingredients.getOutputs(VanillaTypes.FLUID).size() > 0) {
             guiFluidStacks.init(TANK_INK, false, 126, 1, 14, 68, 1000, false, null);
         }
 

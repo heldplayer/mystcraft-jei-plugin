@@ -18,7 +18,7 @@ public class PageSubtypeInterpreter implements ISubtypeInterpreter {
 
     @Nullable
     @Override
-    public String getSubtypeInfo(@Nonnull ItemStack stack) {
+    public String apply(@Nonnull ItemStack stack) {
         NBTTagCompound tag = stack.getTagCompound();
         if (tag == null) {
             return null;
